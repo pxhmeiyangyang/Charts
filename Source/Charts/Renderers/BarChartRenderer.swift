@@ -424,7 +424,9 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             }
             
 //            context.fill(barRect)
-            let path = UIBezierPath.init(roundedRect: barRect, cornerRadius: 2)
+            var tempRect = barRect
+            tempRect.size.height += 2
+            let path = UIBezierPath.init(roundedRect: tempRect, cornerRadius: 2)
             context.addPath(path.cgPath)
             context.fillPath()
             
